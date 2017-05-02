@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="title">
+    <a class="action">
+      <img ng-src="assets/svg/menu.svg">
+    </a>
+  </div>
+  <div class="user-area">
+    <img class="avatar" ng-src="assets/svg/user.svg" alt="user">
+    <div class="text">
+      <div class="name">{{$ctrl.user.name}}</div>
+      <div class="email">{{$ctrl.user.email}}</div>
+    </div>
+    <div class="action">
+      <a href="#" ng-click="$ctrl.logout()">Logoff</a>
+    </div>
+  </div>
+</header>

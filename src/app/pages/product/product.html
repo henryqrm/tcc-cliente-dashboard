@@ -1,0 +1,49 @@
+<md-card class="product" ng-cloak>
+  <!--<img ng-src="../assets/images/product.png" class="md-card-image" alt="Washed Out">-->
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Cadastro de produtos</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+    <form name="projectForm" action="">
+      <md-content layout-gt-sm="column" layout-padding>
+        <md-input-container>
+          <label>Nome</label>
+          <input ng-model="product.name">
+        </md-input-container>
+        <md-input-container>
+          <label>Descrição</label>
+          <input md-maxlength="30" required md-no-asterisk name="description" ng-model="product.description">
+          <div ng-messages="projectForm.description.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <md-checkbox name="isActive" ng-model="product.isActive" required>
+            Este produto esta ativo
+          </md-checkbox>
+          <div ng-messages="projectForm.isActive.$error" multiple md-auto-hide="false">
+            <div ng-message="required">
+              You must accept the terms of service before you can proceed.
+            </div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label>Donation Amount</label>
+          <input ng-model="product.value" type="number" step="0.01">
+        </md-input-container>
+        
+        <category></category>
+
+      </md-content>
+    </form>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button>Action 1</md-button>
+    <md-button>Action 2</md-button>
+  </md-card-actions>
+</md-card>
